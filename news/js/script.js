@@ -21,7 +21,7 @@ $.ajax({
       var test = leadPara[j].replace('"', "");
       var coma = test.replace(",", "");
       var dot = coma.replace(".", "");
-      if(dot !== "the" && dot !== "was" && dot !== "THIS" && dot !== "it" && dot !== "he" && dot !== "with" && dot !== "and" && dot !== "of" && dot !== "a" && dot !== "has" && dot !== "in" && dot !== "that" && dot !== "THE" && dot !== "on" && dot !== "from" && dot !== "to" && dot !== "by" && dot !== "an") {
+      if(dot !== "the" && dot !== "was" && dot !== "THIS" && dot !== "it" && dot !== "he" && dot !== "with" && dot !== "and" && dot !== "of" && dot !== "a" && dot !== "has" && dot !== "in" && dot !== "that" && dot !== "THE" && dot !== "on" && dot !== "from" && dot !== "to" && dot !== "by" && dot !== "an"  && dot !== "be"  && dot !== "his"  && dot !== "The"  && dot !== "you'll"  && dot !== "But"  && dot !== "He"  && dot !== "THAT"  && dot !== "As"  && dot !== "near"  && dot !== "for") {
         words.push(dot);
         console.log(words);
       }
@@ -41,12 +41,12 @@ $.ajax({
       
     } else {
       var target = $('*[data-word="' + words[i] + '"]');
-      $("body").append("<p data-word='" + words[i] + "' data-fontsize='20' style='font-size:30px; background-color: blue ; margin:5px ; display: inline-block; transform: rotate(90deg) ;'>" + words[i] + "</p>");
-      
+      //please work
+      var rando = Math.floor(Math.random() * 180) + 1;
+      $("body").append("<p data-word='" + words[i] + "' data-fontsize='20' style='font-size:30px; background-color: blue ; margin:5px ; display: inline-block; transform: rotate(" + rando + "deg) ;'>" + words[i] + "</p>");
     }
 }
   
 }).fail(function(err) {
   throw err;
 });
-
